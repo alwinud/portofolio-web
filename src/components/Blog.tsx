@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Calendar, ArrowRight } from 'lucide-react';
+import { ExternalLink, Calendar, ArrowRight, Sparkles } from 'lucide-react';
 
 const Blog = () => {
   const blogPosts = [
@@ -30,11 +30,23 @@ const Blog = () => {
   ];
 
   return (
-    <section id="blog" className="py-20 px-6 bg-muted/30">
-      <div className="container mx-auto">
+    <section id="blog" className="py-20 px-6 relative">
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 left-20 w-60 h-60 bg-green-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-60 h-60 bg-purple-500/10 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="container mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">Latest Articles</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto mb-6"></div>
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <Sparkles className="text-blue-400" size={24} />
+            <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              Latest Articles
+            </h2>
+            <Sparkles className="text-purple-400" size={24} />
+          </div>
+          <div className="w-24 h-1 gradient-primary mx-auto mb-6 rounded-full"></div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Sharing insights and knowledge through technical writing and tutorials
           </p>
@@ -42,13 +54,13 @@ const Blog = () => {
 
         <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {blogPosts.map((post, index) => (
-            <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full flex flex-col">
+            <Card key={index} className="glass hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 hover:-translate-y-2 h-full flex flex-col">
               <CardHeader>
                 <div className="flex items-center text-sm text-muted-foreground mb-3">
-                  <Calendar size={16} className="mr-2" />
+                  <Calendar size={16} className="mr-2 text-blue-400" />
                   {post.date} • {post.readTime}
                 </div>
-                <CardTitle className="text-xl font-semibold leading-tight hover:text-primary transition-colors duration-200">
+                <CardTitle className="text-xl font-semibold leading-tight hover:text-blue-400 transition-colors duration-200 text-foreground">
                   {post.title}
                 </CardTitle>
               </CardHeader>
@@ -62,7 +74,7 @@ const Blog = () => {
                     {post.tags.map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
-                        className="px-2 py-1 text-xs bg-primary/10 text-primary rounded border border-primary/20"
+                        className="px-3 py-1 text-xs glass text-muted-foreground rounded-full border border-blue-400/20"
                       >
                         {tag}
                       </span>
@@ -70,9 +82,9 @@ const Blog = () => {
                   </div>
                 </div>
 
-                <Button variant="ghost" className="w-full justify-between group mt-auto">
-                  Read More
-                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-200" />
+                <Button variant="ghost" className="w-full justify-between group mt-auto glass hover:bg-blue-500/10">
+                  <span className="text-blue-400">Read More</span>
+                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-200 text-blue-400" />
                 </Button>
               </CardContent>
             </Card>
@@ -84,7 +96,7 @@ const Blog = () => {
             variant="outline" 
             size="lg"
             onClick={() => window.open('https://medium.com/@alwinud', '_blank')}
-            className="text-lg px-8 py-3 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+            className="text-lg px-8 py-3 glass border-blue-400/30 text-blue-400 hover:bg-blue-400/10 transition-all duration-300 hover:scale-105"
           >
             <ExternalLink size={20} className="mr-2" />
             Read More on Medium
