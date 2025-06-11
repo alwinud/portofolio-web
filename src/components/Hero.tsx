@@ -1,16 +1,14 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown, Mail, Github, Linkedin } from 'lucide-react';
-
 const Hero = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    element?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
-  return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-20 px-6">
+  return <section id="home" className="min-h-screen flex items-center justify-center pt-20 px-6">
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
           {/* Left Content */}
@@ -37,13 +35,7 @@ const Hero = () => {
                 </p>
               </div>
 
-              <Button 
-                size="lg" 
-                onClick={() => scrollToSection('about')}
-                className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
-              >
-                My story →
-              </Button>
+              <Button size="lg" onClick={() => scrollToSection('about')} className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground font-extrabold">About Me</Button>
             </div>
 
             {/* Contact Info */}
@@ -53,10 +45,7 @@ const Hero = () => {
               </p>
               <div className="space-y-3">
                 <p className="text-muted-foreground">Any Type Of Query & Discussion.</p>
-                <a 
-                  href="mailto:udaradevapriya7@gmail.com"
-                  className="text-primary hover:text-primary/80 transition-colors font-medium"
-                >
+                <a href="mailto:udaradevapriya7@gmail.com" className="text-primary hover:text-primary/80 transition-colors font-medium">
                   hi@carlos.com →
                 </a>
               </div>
@@ -117,8 +106,6 @@ const Hero = () => {
           <ArrowDown className="text-muted-foreground" size={24} />
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
