@@ -5,39 +5,37 @@ import { GraduationCap, Award, Heart } from 'lucide-react';
 
 const About = () => {
   return (
-    <section id="about" className="py-20 px-6 bg-muted/30">
+    <section id="about" className="py-32 px-6">
       <div className="container mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">About Me</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto"></div>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-          <div>
-            {/* Profile Image Placeholder */}
-            <div className="w-80 h-80 mx-auto lg:mx-0 rounded-2xl bg-gradient-to-br from-blue-500 to-teal-500 flex items-center justify-center text-6xl font-bold text-white mb-8">
-              UD
+        <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
+          {/* Left Content */}
+          <div className="space-y-8">
+            <div className="space-y-6">
+              <p className="text-sm uppercase tracking-wider text-muted-foreground font-medium">
+                — ABOUT ME
+              </p>
+              <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+                I'm a <span className="text-gradient">passionate</span> engineer who loves to create intelligent solutions.
+              </h2>
             </div>
-          </div>
 
-          <div className="space-y-6">
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              I'm a Mechanical Engineering graduate with a strong interest in machine learning, data science, and intelligent automation. My journey has taken me from understanding physical systems to developing data-driven, AI-powered solutions that solve real-world problems.
-            </p>
+            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+              <p>
+                I'm a Mechanical Engineering graduate with a strong interest in machine learning, data science, and intelligent automation. My journey has taken me from understanding physical systems to developing data-driven, AI-powered solutions that solve real-world problems.
+              </p>
 
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              What excites me most is the intersection of engineering principles and cutting-edge technology. Whether it's building predictive maintenance systems, creating intelligent bots, or developing web applications that leverage machine learning, I'm passionate about creating solutions that make a tangible impact.
-            </p>
+              <p>
+                What excites me most is the intersection of engineering principles and cutting-edge technology. Whether it's building predictive maintenance systems, creating intelligent bots, or developing web applications that leverage machine learning, I'm passionate about creating solutions that make a tangible impact.
+              </p>
+            </div>
 
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              I'm also passionate about visual storytelling, technical blogging, and hands-on learning. My curiosity drives me to continuously explore new technologies and share my knowledge with the community through writing and open-source contributions.
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-6 mt-8">
-              <Card className="border-l-4 border-l-blue-500 hover:shadow-lg transition-shadow duration-300">
+            <div className="grid md:grid-cols-2 gap-6">
+              <Card className="bg-card border-border hover:border-primary/50 transition-colors duration-300">
                 <CardContent className="p-6">
-                  <div className="flex items-center mb-3">
-                    <GraduationCap className="text-blue-500 mr-3" size={24} />
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mr-4">
+                      <GraduationCap className="text-primary" size={24} />
+                    </div>
                     <h3 className="font-semibold text-lg">Education</h3>
                   </div>
                   <p className="text-sm text-muted-foreground mb-2">
@@ -47,10 +45,12 @@ const About = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-l-4 border-l-teal-500 hover:shadow-lg transition-shadow duration-300">
+              <Card className="bg-card border-border hover:border-primary/50 transition-colors duration-300">
                 <CardContent className="p-6">
-                  <div className="flex items-center mb-3">
-                    <Award className="text-teal-500 mr-3" size={24} />
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mr-4">
+                      <Award className="text-primary" size={24} />
+                    </div>
                     <h3 className="font-semibold text-lg">Current Studies</h3>
                   </div>
                   <p className="text-sm text-muted-foreground mb-2">
@@ -60,18 +60,22 @@ const About = () => {
                 </CardContent>
               </Card>
             </div>
+          </div>
 
-            <Card className="border-l-4 border-l-purple-500 hover:shadow-lg transition-shadow duration-300">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-3">
-                  <Heart className="text-purple-500 mr-3" size={24} />
-                  <h3 className="font-semibold text-lg">Passions</h3>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  Blending design with data, technical writing, photography, and sharing knowledge with the community through open-source contributions and blogging.
-                </p>
-              </CardContent>
-            </Card>
+          {/* Right Content - Image */}
+          <div className="flex justify-center">
+            <div className="relative">
+              <div className="w-96 h-[500px] rounded-2xl bg-gradient-to-br from-primary/10 to-orange-400/10 flex items-center justify-center text-8xl font-bold text-primary/50 border border-primary/20">
+                UD
+              </div>
+              {/* Decorative grid */}
+              <div className="absolute -bottom-8 -right-8 grid grid-cols-2 gap-2">
+                <div className="w-16 h-16 bg-primary rounded-lg"></div>
+                <div className="w-16 h-16 bg-secondary rounded-lg"></div>
+                <div className="w-16 h-16 bg-muted rounded-lg"></div>
+                <div className="w-16 h-16 bg-primary/20 rounded-lg"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

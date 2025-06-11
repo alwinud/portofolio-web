@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowDown, Mail, Github } from 'lucide-react';
+import { ArrowDown, Mail, Github, Linkedin } from 'lucide-react';
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -11,58 +11,105 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-20 px-6">
-      <div className="container mx-auto text-center">
-        <div className="max-w-4xl mx-auto">
-          {/* Profile Image Placeholder */}
-          <div className="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-br from-blue-500 to-teal-500 flex items-center justify-center text-4xl font-bold text-white">
-            UD
+      <div className="container mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+          {/* Left Content */}
+          <div className="space-y-8">
+            <div className="space-y-6">
+              <div className="space-y-2">
+                <p className="text-sm uppercase tracking-wider text-muted-foreground font-medium">
+                  — ENGINEERING & AI
+                </p>
+                <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+                  Udara
+                  <br />
+                  <span className="text-gradient">Devapriya.</span>
+                </h1>
+              </div>
+              
+              <div className="space-y-4">
+                <h2 className="text-xl md:text-2xl text-muted-foreground font-medium">
+                  Machine Learning Developer and Engineer, based in Sri Lanka.
+                </h2>
+                <p className="text-lg text-muted-foreground/80 max-w-lg leading-relaxed">
+                  Get an innovative data scientist with a solid engineering background to 
+                  create intelligent systems that solve real-world problems.
+                </p>
+              </div>
+
+              <Button 
+                size="lg" 
+                onClick={() => scrollToSection('about')}
+                className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
+              >
+                My story →
+              </Button>
+            </div>
+
+            {/* Contact Info */}
+            <div className="pt-8 border-t border-border">
+              <p className="text-sm uppercase tracking-wider text-muted-foreground font-medium mb-4">
+                — CONNECT
+              </p>
+              <div className="space-y-3">
+                <p className="text-muted-foreground">Any Type Of Query & Discussion.</p>
+                <a 
+                  href="mailto:udaradevapriya7@gmail.com"
+                  className="text-primary hover:text-primary/80 transition-colors font-medium"
+                >
+                  hi@carlos.com →
+                </a>
+              </div>
+            </div>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-            Udara Devapriya
-          </h1>
-
-          <p className="text-xl md:text-2xl text-muted-foreground mb-4 font-medium">
-            Machine Learning Developer | Mechanical Engineer | Data Enthusiast
-          </p>
-
-          <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-            Solving real-world problems through machine learning and intelligent systems.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Button 
-              size="lg" 
-              onClick={() => scrollToSection('projects')}
-              className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 transition-all duration-300 hover:scale-105"
-            >
-              View Projects
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              onClick={() => scrollToSection('contact')}
-              className="text-lg px-8 py-6 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105"
-            >
-              Contact Me
-            </Button>
+          {/* Right Content - Profile Image */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative">
+              <div className="w-80 h-96 rounded-2xl bg-gradient-to-br from-primary/20 to-orange-400/20 flex items-center justify-center text-6xl font-bold text-primary border border-primary/20">
+                UD
+              </div>
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full"></div>
+              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-orange-400 rounded-full"></div>
+            </div>
           </div>
+        </div>
 
-          <div className="flex justify-center space-x-6">
-            <a
-              href="mailto:udaradevapriya7@gmail.com"
-              className="text-muted-foreground hover:text-primary transition-colors duration-200 hover:scale-110 transform"
-            >
-              <Mail size={24} />
-            </a>
-            <a
-              href="https://github.com/alwinud"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors duration-200 hover:scale-110 transform"
-            >
-              <Github size={24} />
-            </a>
+        {/* Stats Section */}
+        <div className="mt-20 pt-16 border-t border-border">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl">
+            <div>
+              <p className="text-muted-foreground mb-4">
+                You can't use up creativity, the more you use, more you have in your significant mind.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="text-4xl font-bold text-gradient mb-2">3+</div>
+              <p className="text-sm text-muted-foreground uppercase tracking-wider">
+                Years of<br />Experience.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="text-4xl font-bold text-gradient mb-2">15+</div>
+              <p className="text-sm text-muted-foreground uppercase tracking-wider">
+                Satisfied<br />Clients.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-3 gap-4">
+              <div className="aspect-square bg-primary rounded-lg flex items-center justify-center">
+                <span className="text-primary-foreground font-bold text-sm">ML<br />DEV</span>
+              </div>
+              <div className="aspect-square bg-secondary rounded-lg flex items-center justify-center">
+                <span className="text-muted-foreground font-bold text-sm">DATA<br />SCI</span>
+              </div>
+              <div className="aspect-square bg-muted rounded-lg flex items-center justify-center">
+                <span className="text-muted-foreground font-bold text-sm">WEB<br />DEV</span>
+              </div>
+            </div>
           </div>
         </div>
 
