@@ -15,9 +15,13 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
+    { href: '#home', label: 'Home' },
+    { href: '#about', label: 'About' },
+    { href: '#skills', label: 'Skills' },
+    { href: '#projects', label: 'Projects' },
     { href: '#services', label: 'Services' },
-    { href: '#projects', label: 'Works' },
     { href: '#blog', label: 'Blog' },
+    { href: '#contact', label: 'Contact' },
   ];
 
   const scrollToSection = (href: string) => {
@@ -30,37 +34,28 @@ const Navbar = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled ? 'bg-background/95 backdrop-blur-sm border-b border-border' : 'bg-transparent'
     }`}>
-      <div className="container mx-auto px-6 py-6">
+      <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">UD</span>
-            </div>
+          <div className="text-2xl font-bold text-primary">
+            UD
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-12">
+          <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium relative group"
+                className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
-            <div className="flex items-center space-x-1">
-              <div className="w-2 h-2 bg-primary rounded-full"></div>
-              <div className="w-2 h-2 bg-primary/60 rounded-full"></div>
-              <div className="w-2 h-2 bg-primary/30 rounded-full"></div>
-            </div>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-foreground"
+            className="md:hidden text-primary"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -69,12 +64,12 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-6 bg-card border border-border rounded-lg p-6">
+          <div className="md:hidden mt-4 bg-background border border-border rounded-lg p-4">
             {navItems.map((item) => (
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left py-3 text-muted-foreground hover:text-foreground transition-colors duration-200"
+                className="block w-full text-left py-2 text-muted-foreground hover:text-primary transition-colors duration-200"
               >
                 {item.label}
               </button>

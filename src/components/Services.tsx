@@ -1,86 +1,78 @@
 
 import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Brain, BarChart, Globe, Bot, PenTool } from 'lucide-react';
 
 const Services = () => {
   const services = [
     {
       title: "Machine Learning Solutions",
-      description: "End-to-end ML project development from data preprocessing to model deployment.",
-      icon: <Brain className="text-primary" size={32} />,
-      color: "bg-primary"
+      description: "End-to-end ML project development from data preprocessing to model deployment, specializing in predictive analytics and intelligent automation systems.",
+      icon: <Brain className="text-blue-500" size={32} />,
+      features: ["Predictive Analytics", "Model Development", "Data Pipeline", "Performance Optimization"]
     },
     {
-      title: "Data Visualization",
-      description: "Creating interactive dashboards and compelling visualizations.",
-      icon: <BarChart className="text-foreground" size={32} />,
-      color: "bg-secondary"
+      title: "Data Visualization & Dashboards", 
+      description: "Creating interactive dashboards and compelling visualizations that transform complex data into actionable insights for decision-making.",
+      icon: <BarChart className="text-green-500" size={32} />,
+      features: ["Interactive Dashboards", "Data Storytelling", "Real-time Analytics", "Custom Visualizations"]
     },
     {
-      title: "Web App Integration",
-      description: "Developing robust web applications with ML integration.",
-      icon: <Globe className="text-foreground" size={32} />,
-      color: "bg-muted"
+      title: "Web App Integration (Flask + ML)",
+      description: "Developing robust web applications that seamlessly integrate machine learning models, enabling real-time predictions and user-friendly interfaces.",
+      icon: <Globe className="text-purple-500" size={32} />,
+      features: ["Flask Development", "API Integration", "Model Deployment", "Responsive Design"]
     },
     {
-      title: "Educational Bots",
-      description: "Building intelligent bots and automation systems.",
-      icon: <Bot className="text-foreground" size={32} />,
-      color: "bg-secondary"
+      title: "Educational Bots & Automation",
+      description: "Building intelligent bots and automation systems for educational purposes, including quiz bots, learning assistants, and interactive tools.",
+      icon: <Bot className="text-orange-500" size={32} />,
+      features: ["Telegram Bots", "Quiz Systems", "User Analytics", "Automated Responses"]
     },
     {
-      title: "Technical Writing",
-      description: "Creating comprehensive technical content and tutorials.",
-      icon: <PenTool className="text-foreground" size={32} />,
-      color: "bg-muted"
+      title: "Technical Writing & Blogging",
+      description: "Creating comprehensive technical content, tutorials, and blog posts that make complex concepts accessible to diverse audiences.",
+      icon: <PenTool className="text-pink-500" size={32} />,
+      features: ["Technical Tutorials", "Project Documentation", "Blog Content", "Knowledge Sharing"]
     }
   ];
 
   return (
-    <section id="services" className="py-32 px-6">
+    <section id="services" className="py-20 px-6">
       <div className="container mx-auto">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-20">
-            <p className="text-sm uppercase tracking-wider text-muted-foreground font-medium mb-6">
-              — SERVICES
-            </p>
-            <div className="grid lg:grid-cols-2 gap-12 items-end">
-              <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-                What I Do
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Delivering comprehensive solutions at the intersection of engineering and technology.
-              </p>
-            </div>
-          </div>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">What I Do</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto mb-6"></div>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Delivering comprehensive solutions at the intersection of engineering and technology
+          </p>
+        </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <Card 
-                key={index} 
-                className="bg-card border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 group h-full"
-              >
-                <CardContent className="p-8 h-full flex flex-col">
-                  <div className={`w-16 h-16 ${service.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    {service.icon}
-                  </div>
-                  
-                  <h3 className="text-xl font-semibold mb-4 group-hover:text-primary transition-colors duration-300">
-                    {service.title}
-                  </h3>
-                  
-                  <p className="text-muted-foreground leading-relaxed flex-1">
-                    {service.description}
-                  </p>
-                  
-                  <div className="mt-6 text-sm text-primary font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    Learn more →
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {services.map((service, index) => (
+            <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full">
+              <CardHeader className="text-center pb-4">
+                <div className="flex justify-center mb-4">
+                  {service.icon}
+                </div>
+                <CardTitle className="text-xl font-semibold">{service.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="flex-1">
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  {service.description}
+                </p>
+                
+                <ul className="space-y-2">
+                  {service.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-center text-sm text-muted-foreground">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </section>
