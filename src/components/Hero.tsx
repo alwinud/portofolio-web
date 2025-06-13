@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowDown, Mail, Github, Download, Code } from 'lucide-react';
+import { ArrowDown, Mail, Github, Download, Code, Linkedin, MessageCircleMore, PenTool } from 'lucide-react';
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -21,10 +20,11 @@ const Hero = () => {
         <div className="max-w-5xl mx-auto">
           {/* Profile Image */}
           <div className="relative w-40 h-40 mx-auto mb-8">
-            <div className="w-full h-full rounded-full gradient-primary flex items-center justify-center text-4xl font-bold text-primary-foreground shadow-2xl">
-              UD
-            </div>
-            <div className="absolute inset-0 rounded-full bg-accent opacity-30 blur-lg animate-pulse"></div>
+            <img src="https://i.postimg.cc/sfQKcz23/275009206-452716056596933-7160278159959486546-n.jpg"
+            alt="Profile"
+            className="w-full h-full object-cover rounded-full shadow-2xl"/>
+
+            
           </div>
 
           {/* Main Heading */}
@@ -80,12 +80,14 @@ const Hero = () => {
 
           {/* Social Links */}
           <div className="flex justify-center space-x-8 mb-16">
+            {/* Email */}
             <a
               href="mailto:udaradevapriya7@gmail.com"
               className="p-4 rounded-full glass hover:bg-accent/20 transition-all duration-300 hover:scale-110 group"
             >
               <Mail size={24} className="text-muted-foreground group-hover:text-accent transition-colors" />
             </a>
+            {/* GitHub */}
             <a
               href="https://github.com/alwinud"
               target="_blank"
@@ -94,13 +96,33 @@ const Hero = () => {
             >
               <Github size={24} className="text-muted-foreground group-hover:text-accent transition-colors" />
             </a>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="p-2 rounded-full glass">
-            <ArrowDown className="text-muted-foreground" size={24} />
+            {/* Medium */}
+            <a
+              href="https://medium.com/@udaradevapriya7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-4 rounded-full glass hover:bg-accent/20 transition-all duration-300 hover:scale-110 group"
+            >
+              <PenTool size={24} className="text-muted-foreground group-hover:text-accent transition-colors" />
+            </a>
+            {/* LinkedIn */}
+            <a
+              href="https://linkedin.com/in/udaradevapriya"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-4 rounded-full glass hover:bg-accent/20 transition-all duration-300 hover:scale-110 group"
+            >
+              <Linkedin size={24} className="text-muted-foreground group-hover:text-accent transition-colors" />
+            </a>
+            {/* WhatsApp */}
+            <a
+              href="https://wa.me/94765532236"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-4 rounded-full glass hover:bg-accent/20 transition-all duration-300 hover:scale-110 group"
+            >
+              <MessageCircleMore size={24} className="text-muted-foreground group-hover:text-accent transition-colors" />
+            </a>
           </div>
         </div>
       </div>

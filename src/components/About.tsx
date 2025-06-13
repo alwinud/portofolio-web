@@ -1,7 +1,11 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { GraduationCap, Award, Heart, Sparkles } from 'lucide-react';
+import {
+  GraduationCap,
+  Award,
+  Heart,
+  Sparkles,
+} from 'lucide-react';
 
 const About = () => {
   return (
@@ -13,6 +17,7 @@ const About = () => {
       </div>
 
       <div className="container mx-auto relative z-10">
+        {/* Section Heading */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
             <Sparkles className="text-accent" size={24} />
@@ -24,17 +29,9 @@ const About = () => {
           <div className="w-24 h-1 gradient-primary mx-auto rounded-full"></div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-          {/* Profile Section */}
-          <div className="relative">
-            <div className="w-80 h-80 mx-auto lg:mx-0 rounded-2xl gradient-card glass flex items-center justify-center text-6xl font-bold text-foreground mb-8 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-yellow-400/20"></div>
-              <span className="relative z-10">UD</span>
-            </div>
-          </div>
-
-          {/* Content Section */}
-          <div className="space-y-6">
+        <div className="max-w-6xl mx-auto space-y-10">
+          {/* About Description */}
+          <div className="space-y-6 text-center md:text-left">
             <p className="text-lg text-muted-foreground leading-relaxed">
               I'm a Mechanical Engineering graduate with a strong interest in machine learning, data science, and intelligent automation. My journey has taken me from understanding physical systems to developing data-driven, AI-powered solutions that solve real-world problems.
             </p>
@@ -46,36 +43,43 @@ const About = () => {
             <p className="text-lg text-muted-foreground leading-relaxed">
               I'm also passionate about visual storytelling, technical blogging, and hands-on learning. My curiosity drives me to continuously explore new technologies and share my knowledge with the community through writing and open-source contributions.
             </p>
+          </div>
 
-            {/* Education & Info Cards */}
-            <div className="grid md:grid-cols-2 gap-6 mt-8">
-              <Card className="glass border-l-4 border-l-accent hover:shadow-xl hover:shadow-accent/10 transition-all duration-300 hover:-translate-y-1">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-3">
-                    <GraduationCap className="text-accent mr-3" size={24} />
-                    <h3 className="font-semibold text-lg text-foreground">Education</h3>
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-2">
-                    BSc in Mechanical Engineering
-                  </p>
-                  <p className="text-sm font-medium text-accent">University of Peradeniya (2023)</p>
-                </CardContent>
-              </Card>
+          {/* Cards Grid */}
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Education */}
+            <Card className="glass border-l-4 border-l-accent hover:shadow-xl hover:shadow-accent/10 transition-all duration-300 hover:-translate-y-1">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-3">
+                  <GraduationCap className="text-accent mr-3" size={24} />
+                  <h3 className="font-semibold text-lg text-foreground">Education</h3>
+                </div>
+                <p className="text-sm text-muted-foreground mb-2">
+                  BSc in Mechanical Engineering
+                </p>
+                <p className="text-sm font-medium text-accent">
+                  University of Peradeniya (2023)
+                </p>
+              </CardContent>
+            </Card>
 
-              <Card className="glass border-l-4 border-l-yellow-400 hover:shadow-xl hover:shadow-yellow-400/10 transition-all duration-300 hover:-translate-y-1">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-3">
-                    <Award className="text-yellow-400 mr-3" size={24} />
-                    <h3 className="font-semibold text-lg text-foreground">Current Studies</h3>
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-2">
-                    MBA in Project Management
-                  </p>
-                  <p className="text-sm font-medium text-yellow-400">Limkokwing University (2024–Present)</p>
-                </CardContent>
-              </Card>
-            </div>
+            {/* Current Studies */}
+            <Card className="glass border-l-4 border-l-yellow-400 hover:shadow-xl hover:shadow-yellow-400/10 transition-all duration-300 hover:-translate-y-1">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-3">
+                  <Award className="text-yellow-400 mr-3" size={24} />
+                  <h3 className="font-semibold text-lg text-foreground">Current Studies</h3>
+                </div>
+                <p className="text-sm text-muted-foreground mb-2">
+                  MBA in Project Management
+                </p>
+                <p className="text-sm font-medium text-yellow-400">
+                  Limkokwing University (2024–Present)
+                </p>
+              </CardContent>
+            </Card>
 
+            {/* Passions */}
             <Card className="glass border-l-4 border-l-orange-400 hover:shadow-xl hover:shadow-orange-400/10 transition-all duration-300 hover:-translate-y-1">
               <CardContent className="p-6">
                 <div className="flex items-center mb-3">

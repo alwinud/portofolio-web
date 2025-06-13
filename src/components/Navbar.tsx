@@ -35,11 +35,8 @@ const Navbar = () => {
       isScrolled ? 'glass border-b border-border' : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="text-2xl font-bold gradient-primary bg-clip-text text-transparent">
-            UD
-          </div>
+        <div className="flex items-center justify-center">
+          
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
