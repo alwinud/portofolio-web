@@ -1,5 +1,12 @@
 import React from 'react';
-import { FaEnvelope, FaGithub, FaLinkedin, FaMedium, FaWhatsapp, FaCode } from 'react-icons/fa';
+import {
+  FaEnvelope,
+  FaGithub,
+  FaLinkedin,
+  FaMedium,
+  FaWhatsapp,
+  FaCode,
+} from 'react-icons/fa';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
@@ -11,7 +18,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center pt-20 px-6 relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center pt-20 px-4 sm:px-6 relative overflow-hidden"
     >
       {/* Background blur elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -31,29 +38,29 @@ const Hero = () => {
           </div>
 
           {/* Name */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-accent via-yellow-400 to-accent bg-clip-text text-transparent leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-accent via-yellow-400 to-accent bg-clip-text text-transparent leading-tight">
             Udara Devapriya
           </h1>
 
           {/* Subtitle */}
-          <div className="flex flex-wrap justify-center items-center gap-2 mb-6 text-xl md:text-2xl text-muted-foreground font-medium">
+          <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 mb-6 text-base sm:text-xl md:text-2xl text-muted-foreground font-medium px-2">
             <span className="flex items-center gap-2">
               <FaCode size={20} className="text-accent" />
               Machine Learning Developer
             </span>
-            <span className="hidden md:inline text-accent">•</span>
+            <span className="hidden sm:inline text-accent">•</span>
             <span>Mechanical Engineer</span>
-            <span className="hidden md:inline text-accent">•</span>
+            <span className="hidden sm:inline text-accent">•</span>
             <span>Data Enthusiast</span>
           </div>
 
           {/* Description */}
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed px-2">
             Solving real-world problems through machine learning and intelligent systems.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-14">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-14 px-2">
             <Button
               size="lg"
               onClick={() => scrollToSection('projects')}
@@ -74,7 +81,7 @@ const Hero = () => {
           </div>
 
           {/* Social Icons */}
-          <div className="flex justify-center space-x-6">
+          <div className="flex justify-center flex-wrap gap-6 px-2">
             <a
               href="mailto:udaradevapriya7@gmail.com"
               className="p-3 rounded-full glass hover:bg-accent/20 transition-all duration-300 hover:scale-110 group"

@@ -1,36 +1,30 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { Mail, Phone, MapPin, Linkedin, Github, ExternalLink, Sparkles, Send } from 'lucide-react';
+import {
+  Mail, Phone, MapPin,
+  Linkedin, Github, ExternalLink,
+  Sparkles, Send
+} from 'lucide-react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const { toast } = useToast();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
     toast({
       title: "Message sent successfully!",
       description: "Thank you for reaching out. I'll get back to you soon.",
     });
-
     setFormData({ name: '', email: '', message: '' });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const contactInfo = [
@@ -42,7 +36,7 @@ const Contact = () => {
     },
     {
       icon: <Phone className="text-green-400" size={24} />,
-      label: "Phone", 
+      label: "Phone",
       value: "+601118860183",
       href: "tel:+601118860183"
     },
@@ -62,7 +56,7 @@ const Contact = () => {
     },
     {
       icon: <Github className="text-foreground" size={24} />,
-      label: "GitHub", 
+      label: "GitHub",
       href: "https://github.com/alwinud"
     },
     {
@@ -73,14 +67,16 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 px-6 relative">
-      {/* Background Elements */}
+    <section id="contact" className="min-h-screen flex items-center justify-center px-6 py-20 relative">
+      {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 right-20 w-60 h-60 bg-blue-500/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 left-20 w-60 h-60 bg-purple-500/10 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="container mx-auto relative z-10">
+      {/* Wrapper for all content */}
+      <div className="relative z-10 w-full max-w-6xl">
+        {/* Heading */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
             <Sparkles className="text-blue-400" size={24} />
@@ -95,7 +91,8 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        {/* Grid: Form + Info */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <Card className="glass hover:shadow-lg hover:shadow-blue-500/10 transition-shadow duration-300">
             <CardHeader>
@@ -104,9 +101,7 @@ const Contact = () => {
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2 text-foreground">
-                    Name
-                  </label>
+                  <label htmlFor="name" className="block text-sm font-medium mb-2 text-foreground">Name</label>
                   <Input
                     id="name"
                     name="name"
@@ -120,9 +115,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2 text-foreground">
-                    Email
-                  </label>
+                  <label htmlFor="email" className="block text-sm font-medium mb-2 text-foreground">Email</label>
                   <Input
                     id="email"
                     name="email"
@@ -136,9 +129,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2 text-foreground">
-                    Message
-                  </label>
+                  <label htmlFor="message" className="block text-sm font-medium mb-2 text-foreground">Message</label>
                   <Textarea
                     id="message"
                     name="message"
@@ -151,11 +142,7 @@ const Contact = () => {
                   />
                 </div>
 
-                <Button 
-                  type="submit" 
-                  size="lg" 
-                  className="w-full gradient-primary hover:scale-105 transition-all duration-300"
-                >
+                <Button type="submit" size="lg" className="w-full gradient-primary hover:scale-105 transition-all duration-300">
                   <Send size={20} className="mr-2" />
                   Send Message
                 </Button>
@@ -163,7 +150,7 @@ const Contact = () => {
             </CardContent>
           </Card>
 
-          {/* Contact Information */}
+          {/* Contact Info & Socials */}
           <div className="space-y-8">
             <Card className="glass hover:shadow-lg hover:shadow-blue-500/10 transition-shadow duration-300">
               <CardHeader>
@@ -172,16 +159,11 @@ const Contact = () => {
               <CardContent className="space-y-6">
                 {contactInfo.map((info, index) => (
                   <div key={index} className="flex items-center space-x-4 p-3 rounded-lg glass">
-                    <div className="flex-shrink-0">
-                      {info.icon}
-                    </div>
+                    <div className="flex-shrink-0">{info.icon}</div>
                     <div>
                       <p className="text-sm text-muted-foreground">{info.label}</p>
                       {info.href ? (
-                        <a 
-                          href={info.href}
-                          className="text-lg font-medium hover:text-blue-400 transition-colors duration-200"
-                        >
+                        <a href={info.href} className="text-lg font-medium hover:text-blue-400 transition-colors duration-200">
                           {info.value}
                         </a>
                       ) : (
