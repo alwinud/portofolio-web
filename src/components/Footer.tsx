@@ -23,13 +23,7 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col items-center md:items-end">
-            <div className="flex items-center space-x-2 text-muted-foreground mb-2">
-              <span>Built with</span>
-              <Heart size={16} className="text-red-400 animate-pulse" />
-              <span>and</span>
-              <Code size={16} className="text-blue-400" />
-              <span>using React & Tailwind CSS</span>
-            </div>
+            
             <p className="text-sm text-muted-foreground">
               © 2024 Udara Devapriya. All rights reserved.
             </p>

@@ -31,7 +31,7 @@ const Hero = () => {
           {/* Profile image */}
           <div className="relative w-40 h-40 mx-auto mb-8 rounded-full overflow-hidden border-4 border-accent shadow-xl">
             <img
-              src="https://i.postimg.cc/sfQKcz23/275009206-452716056596933-7160278159959486546-n.jpg"
+              src="/profile.jpg"
               alt="Udara Devapriya"
               className="w-full h-full object-cover"
             />

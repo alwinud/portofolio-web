@@ -133,7 +133,7 @@ const Projects = () => {
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => navigate(project.caseStudy)}
+                      onClick={() => navigate(`/case-study/${project.caseStudy.split('/').pop()}`)}
                       className="glass border-purple-400/30 text-purple-400 hover:bg-purple-400/10 w-full"
                     >
                       <FileText size={16} className="mr-2" />
